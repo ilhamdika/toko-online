@@ -139,6 +139,14 @@
 
     @yield('content')
     
+      <script>
+        var botmanWidget = {
+            introMessage: "✋ Hi! I'm a chatbot",
+            chatServer: '/botman',
+            title: 'Chatbot Taek',
+        };
+      </script>
+
     <footer class="site-footer border-top">
       <div class="container">
         <div class="row">
@@ -214,6 +222,7 @@
   <script src="{{ asset('shopper') }}/js/owl.carousel.min.js"></script>
   <script src="{{ asset('shopper') }}/js/jquery.magnific-popup.min.js"></script>
   <script src="{{ asset('shopper') }}/js/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js"></script>
 
   <script src="{{ asset('shopper') }}/js/main.js"></script>
     @yield('js')

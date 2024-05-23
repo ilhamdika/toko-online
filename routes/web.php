@@ -12,6 +12,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BotManController;
 
 Auth::routes();
 Route::get('/','user\WelcomeController@index')->name('home');
@@ -91,3 +92,5 @@ Route::group(['middleware' => ['auth','checkRole:customer']],function(){
 
 Route::get('/ongkir', 'OngkirController@index');
 Route::get('/ongkir/province/{id}/cities', 'OngkirController@getCities');
+
+Route::match(['get', 'post'], '/botman', [BotManController::class, 'handle']);
